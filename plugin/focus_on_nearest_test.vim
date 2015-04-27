@@ -28,11 +28,18 @@ function! g:GetTestName()
 endfunction
 
 function! FocusOnNearestTest()
-  let base_cmd = ":FocusDispatch bundle exec "
+  let base_cmd = ":FocusDispatch "
+
   if match(expand("%"), "_test.rb$") != -1
     exec base_cmd . "ruby -Ilib:test % -n /" . g:GetTestName() . "/"
   elseif match(expand("%"), "_spec.rb$") != -1
-    exec base_cmd . "rspec %:" . line(".")
+    if filereadable("bin/rspec") == 1
+      let base_cmd = base_cmd . "bin/rspec "
+    else
+      let base_cmd = base_cmd . "bundle exec rspec "
+    endif
+
+    exec base_cmd . "%:" . line(".")
   endif
 
   exec ":Dispatch"
