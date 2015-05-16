@@ -9,7 +9,7 @@ normal `def test_thing; end`.
 [dispatch]: https://github.com/tpope/vim-dispatch
 
 ## Usage
-``viml
+```viml
 :FocusOnNearestTest
 ```
 
