@@ -43,9 +43,9 @@ function! FocusOnNearestTest()
       let base_cmd = base_cmd . "bundle exec rspec "
     endif
 
-    exec base_cmd . "%:" . line(".")
+    exec base_cmd . "'%':" . line(".")
   endif
 
   exec ":Dispatch"
 endfunction
-command FocusOnNearestTest :silent call FocusOnNearestTest()<cr>
+command! FocusOnNearestTest :silent call FocusOnNearestTest()<cr>
