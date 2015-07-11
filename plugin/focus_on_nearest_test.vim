@@ -45,7 +45,5 @@ function! FocusOnNearestTest()
 
     exec base_cmd . "'%':" . line(".")
   endif
-
-  exec ":Dispatch"
 endfunction
 command! FocusOnNearestTest :silent call FocusOnNearestTest()<cr>
