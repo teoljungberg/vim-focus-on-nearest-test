@@ -49,4 +49,4 @@ function! FocusOnNearestTest()
 
   exec command
 endfunction
-command! FocusOnNearestTest :silent call FocusOnNearestTest()
+command! FocusOnNearestTest :call FocusOnNearestTest()
