@@ -1,4 +1,4 @@
-function! g:GetTestName()
+function! s:GetTestName()
   let vanilla = line('.')
   let test_name = ""
 
@@ -36,7 +36,7 @@ function! FocusOnNearestTest()
       let base_cmd = base_cmd . "bundle exec "
     endif
 
-    let command = base_cmd . "ruby -Ilib:test % -n /" . g:GetTestName() . "/"
+    let command = base_cmd . "ruby -Ilib:test % -n /" . s:GetTestName() . "/"
   elseif match(expand("%"), "_spec.rb$") != -1
     if filereadable("bin/rspec") == 1
       let base_cmd = base_cmd . "bin/rspec "
