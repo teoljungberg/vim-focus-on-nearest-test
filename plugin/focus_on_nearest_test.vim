@@ -49,4 +49,3 @@ function! FocusOnNearestTest()
 
   exec command
 endfunction
-command! FocusOnNearestTest :call FocusOnNearestTest()

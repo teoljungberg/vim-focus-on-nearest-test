@@ -10,7 +10,7 @@ normal `def test_thing; end`.
 
 ## Usage
 ```viml
-:FocusOnNearestTest
+:call FocusOnNearestTest
 ```
 
 Then just fire away `:Dispatch` to re-run the test.
